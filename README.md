@@ -1,2 +1,143 @@
-# Valentine-site
-It is for trolling your friends don't take it seriously 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Special 🤣</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(135deg, #ff4e8a, #ff9eb5);
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4e8a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ffe3ec;
+}
+
+.hidden {
+    display: none;
+}
+
+.fade {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Step 1 -->
+    <div id="step1" class="fade">
+        <h1>💘 Happy Valentine 💘</h1>
+        <p>Apna naam likho 👇</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <br>
+        <button onclick="showStep2()">Next</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="hidden">
+        <h1 id="message1"></h1>
+        <button onclick="showStep3()">Next</button>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="hidden">
+        <h1>Us Bro Us 🤣</h1>
+        <button onclick="showStep4()">Next</button>
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="hidden">
+        <h1>Hamare nasib mein toh Valentine nahi hai 🤣<br>
+        Lekin tum mujhe 2 Samosa khila dena 😎</h1>
+        <button onclick="showStep5()">Next</button>
+    </div>
+
+    <!-- Step 5 -->
+    <div id="step5" class="hidden">
+        <h1>Thank You 😊</h1>
+    </div>
+
+</div>
+
+<script>
+function showStep2() {
+    let name = document.getElementById("nameInput").value;
+    if(name === "") {
+        alert("Naam toh likh de yaar 😂");
+        return;
+    }
+
+    document.getElementById("step1").classList.add("hidden");
+    document.getElementById("step2").classList.remove("hidden");
+    document.getElementById("step2").classList.add("fade");
+
+    document.getElementById("message1").innerHTML =
+        name + ", We are same 🤣<br>Hamare nasib mein Valentine nahi hai 😂";
+}
+
+function showStep3() {
+    document.getElementById("step2").classList.add("hidden");
+    document.getElementById("step3").classList.remove("hidden");
+    document.getElementById("step3").classList.add("fade");
+}
+
+function showStep4() {
+    document.getElementById("step3").classList.add("hidden");
+    document.getElementById("step4").classList.remove("hidden");
+    document.getElementById("step4").classList.add("fade");
+}
+
+function showStep5() {
+    document.getElementById("step4").classList.add("hidden");
+    document.getElementById("step5").classList.remove("hidden");
+    document.getElementById("step5").classList.add("fade");
+}
+</script>
+
+</body>
+</html>
